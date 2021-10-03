@@ -1,0 +1,31 @@
+/* login page */
+body {
+	background-image: url(../images/login-bg.png);
+	/* background-repeat: no-repeat; */
+	background-size: cover;
+}
+
+/* .container {
+	height: 660px;
+	position: relative;
+} */
+
+.bg-login {
+	margin-top: 30vh;
+    margin-bottom: 30vh;
+	/* margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
+
+	width: 500px;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+label.required:after {
+	content: "*" !important;
+	color: red !important;
+}
