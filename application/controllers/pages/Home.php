@@ -353,5 +353,96 @@ class Home extends CI_Controller {
 		$this->load->view('adm_layout/master', $data);
 	}
 	//end of Course on Trending
+
+	// OKR SUMMARY - MONITORING
+	public function okr_summary()
+	{
+		if ($this->session->userdata('status') !== 'admin_logged_in') {
+			redirect('pages/Login');
+		}
+		$this->M_auditTrail->auditTrailRead('OKR Summary', $this->session->userdata['type']);
+
+
+		$data = [
+			'member_dsc' => $this->M_memberDsc->get_all_member(),
+			'usecase' => $this->M_otherDataAssignments->get_usecase(),
+			'member_selected' => '',
+			'usecase_selected' => '',
+			'judul' => 'OKR Summary - INSIGHT',
+			'konten' => 'adm_views/home/monitoring_okr_summaryProduct',
+			'admModal' => [],
+			'footerGraph' => []
+		];
+
+		$this->load->view('adm_layout/master', $data);
+	}
+
+	//Jenis OKR
+	public function okr_summary_product()
+	{
+		if ($this->session->userdata('status') !== 'admin_logged_in') {
+			redirect('pages/Login');
+		}
+		$this->M_auditTrail->auditTrailRead('OKR Summary', $this->session->userdata['type']);
+
+
+		$data = [
+			'member_dsc' => $this->M_memberDsc->get_all_member(),
+			'usecase' => $this->M_otherDataAssignments->get_usecase(),
+			'member_selected' => '',
+			'usecase_selected' => '',
+			'judul' => 'OKR Summary - INSIGHT',
+			'konten' => 'adm_views/home/monitoring_okr_summaryProduct',
+			'admModal' => [],
+			'footerGraph' => []
+		];
+
+		$this->load->view('adm_layout/master', $data);
+	}
+
+	public function okr_summary_DSC()
+	{
+		if ($this->session->userdata('status') !== 'admin_logged_in') {
+			redirect('pages/Login');
+		}
+		$this->M_auditTrail->auditTrailRead('OKR Summary', $this->session->userdata['type']);
+
+
+		$data = [
+			'member_dsc' => $this->M_memberDsc->get_all_member(),
+			'usecase' => $this->M_otherDataAssignments->get_usecase(),
+			'member_selected' => '',
+			'usecase_selected' => '',
+			'judul' => 'OKR Summary - INSIGHT',
+			'konten' => 'adm_views/home/monitoring_okr_summaryDSC',
+			'admModal' => [],
+			'footerGraph' => []
+		];
+
+		$this->load->view('adm_layout/master', $data);
+	}
+
+	public function okr_summary_member()
+	{
+		if ($this->session->userdata('status') !== 'admin_logged_in') {
+			redirect('pages/Login');
+		}
+		$this->M_auditTrail->auditTrailRead('OKR Summary', $this->session->userdata['type']);
+
+
+		$data = [
+			'member_dsc' => $this->M_memberDsc->get_all_member(),
+			'usecase' => $this->M_otherDataAssignments->get_usecase(),
+			'member_selected' => '',
+			'usecase_selected' => '',
+			'judul' => 'OKR Summary - INSIGHT',
+			'konten' => 'adm_views/home/monitoring_okr_summaryMember',
+			'admModal' => [],
+			'footerGraph' => []
+		];
+
+		$this->load->view('adm_layout/master', $data);
+	}
+	// END OKR SUMMARY
 }
 
